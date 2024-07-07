@@ -20,6 +20,7 @@ const Seat = ({ position, removeSeat }: Props) => {
 			onClick={() => removeSeat(position)}
 			onMouseOver={() => setRemoveVisible(true)}
 			onMouseOut={() => setRemoveVisible(false)}
+			variant="contained"
 		>
 			<Stack direction={"column"}>
 				{removeVisible && (
@@ -29,9 +30,19 @@ const Seat = ({ position, removeSeat }: Props) => {
 							bottom: 0,
 							width: "100%",
 							height: "100%",
+							// backgroundColor: "lightgrey",
+							// opacity: "10%",
 						}}
 					>
-						<DoDisturbOnOutlinedIcon color="error" />
+						<DoDisturbOnOutlinedIcon
+							color="error"
+							sx={{
+								position: "absolute",
+								alignSelf: "flex-end",
+								marginTop: 1,
+								marginRight: 3,
+							}}
+						/>
 					</Stack>
 				)}
 				<img
