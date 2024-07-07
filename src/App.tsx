@@ -1,8 +1,8 @@
 import React from "react";
 import Koishtekara from "./Koishtekara";
 import { Box, Divider, Stack } from "@mui/material";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/main/Header";
+import Footer from "./components/main/Footer";
 
 function App() {
 	return (
@@ -14,7 +14,7 @@ function App() {
 			alignContent={"space-between"}
 			paddingX={20}
 		>
-			<Box sx={{ flex: 0.2 }}>
+			<Box sx={{ flex: 0.1 }}>
 				<Header />
 			</Box>
 			<Divider sx={{ marginY: 10 }} />
