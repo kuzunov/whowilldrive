@@ -1,12 +1,4 @@
-import {
-	Box,
-	Button,
-	Container,
-	IconButton,
-	Input,
-	Stack,
-	TextField,
-} from "@mui/material";
+import { Box, Button, IconButton, Stack, TextField } from "@mui/material";
 import PlusIcon from "@mui/icons-material/Add";
 import React, { useState } from "react";
 
@@ -35,7 +27,7 @@ const Koishtekara = () => {
 					// variant={"contained"}
 					color={"primary"}
 					onClick={() => {
-						current && names.push(current);
+						current && setNames((prev) => [...prev, current]);
 						setCurrent("");
 					}}
 				>
