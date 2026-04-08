@@ -1,3 +1,6 @@
+import { IPosition } from "./IPosition";
+import { IUser } from "../User/IUser";
+
 export class Position implements IPosition {
 	id: number;
 	lincenceRequired?: boolean | undefined;

@@ -2,7 +2,6 @@ import { Input } from "@mui/base";
 import Grid from "@mui/material/Unstable_Grid2";
 import React, { useEffect, useState } from "react";
 import { Position } from "../../models/Position/Position";
-import { Box, Button, Stack, Typography } from "@mui/material";
 import Seat from "../Seat";
 type Props = { numberOfPeople?: number };
 const CarPicker = ({ numberOfPeople }: Props) => {

@@ -1,9 +1,9 @@
-import { Button, IconButton, Stack, TextField } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 import React, { useState } from "react";
 import UserEntry from "./components/UserEntry";
-import { User } from "./models/User/User";
 import CarPicker from "./components/main/CarPicker";
 import UserAdder from "./components/main/UserAdder";
+import { IUser } from "./models/User/IUser";
 
 const Koishtekara = () => {
 	const [users, setUsers] = useState<IUser[]>([]);

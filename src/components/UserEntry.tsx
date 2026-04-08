@@ -1,6 +1,7 @@
 import { IconButton, Stack, Typography } from "@mui/material";
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
+import { IUser } from "../models/User/IUser";
 
 const UserEntry = ({
 	user,

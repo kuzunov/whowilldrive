@@ -1,7 +1,8 @@
-import { Stack, TextField, IconButton, Typography } from "@mui/material";
+import { Stack, TextField, IconButton } from "@mui/material";
 import React, { useState } from "react";
 import { User } from "../../models/User/User";
 import PlusIcon from "@mui/icons-material/Add";
+import { IUser } from "../../models/User/IUser";
 
 type Props = {
 	addUser: (user: IUser) => void;

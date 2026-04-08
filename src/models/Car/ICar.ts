@@ -1,4 +1,4 @@
-interface ICar {
+export interface ICar {
 	name: string;
 	numOfSeating: number;
 }

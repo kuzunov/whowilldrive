@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { Position } from "../models/Position/Position";
 import {
-	Grid,
 	Button,
 	Stack,
 	Typography,
-	IconButton,
-	Box,
 } from "@mui/material";
 import DoDisturbOnOutlinedIcon from "@mui/icons-material/DoDisturbOnOutlined";
 
@@ -49,6 +46,7 @@ const Seat = ({ position, removeSeat }: Props) => {
 					width={"30%"}
 					src={require("../assets/car-seat_5102957.png")}
 					style={{ alignSelf: "center" }}
+					alt="Seat"
 				/>
 				<Typography textAlign={"center"}>
 					{position.isFilled()
