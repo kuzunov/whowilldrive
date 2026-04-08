@@ -1,4 +1,6 @@
-class Car implements ICar {
+import { ICar } from "./ICar";
+
+export class Car implements ICar {
 	public name: string;
 	public numOfSeating: number;
 	constructor(name: string, numOfSeating: number) {
