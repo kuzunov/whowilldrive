@@ -1,6 +1,6 @@
 import React from "react";
 import Koishtekara from "./Koishtekara";
-import { Box, Stack, Container, Paper } from "@mui/material";
+import { Box, Divider, Stack } from "@mui/material";
 import Header from "./components/main/Header";
 import Footer from "./components/main/Footer";
 
@@ -8,22 +8,21 @@ function App() {
 	return (
 		<Stack
 			direction={"column"}
-			sx={{
-				minHeight: "100vh",
-				backgroundColor: "#f5f5f5", // Light gray background
-			}}
+			flex={1}
+			height={"100vh"}
+			sx={{ backgroundColor: "lightblue" }}
+			alignContent={"space-between"}
+			paddingX={20}
 		>
-			<Box sx={{ position: "sticky", top: 0, zIndex: 1000, bgcolor: "primary.main", color: "white", boxShadow: 3, paddingY: 2, textAlign: "center" }}>
+			<Box sx={{ flex: 0.1 }}>
 				<Header />
 			</Box>
-
-			<Container maxWidth="lg" sx={{ flexGrow: 1, paddingY: 4 }}>
-				<Paper elevation={3} sx={{ padding: 4, borderRadius: 2, backgroundColor: "white", minHeight: "70vh" }}>
-					<Koishtekara />
-				</Paper>
-			</Container>
-
-			<Box sx={{ bgcolor: "grey.900", color: "white", paddingY: 3, textAlign: "center", marginTop: "auto" }}>
+			<Divider sx={{ marginY: 10 }} />
+			<Box sx={{ flex: 1 }}>
+				<Koishtekara />
+			</Box>
+			<Divider sx={{ marginY: 2 }} />
+			<Box sx={{ justifySelf: "flex-end", bottom: 0, flex: 0.1 }}>
 				<Footer />
 			</Box>
 		</Stack>

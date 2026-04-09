@@ -1,7 +1,6 @@
-import { Chip } from "@mui/material";
+import { IconButton, Stack, Typography } from "@mui/material";
 import React from "react";
-import FaceIcon from '@mui/icons-material/Face';
-import { IUser } from "../models/User/IUser";
+import CloseIcon from "@mui/icons-material/Close";
 
 const UserEntry = ({
 	user,
@@ -11,21 +10,19 @@ const UserEntry = ({
 	removeUser: (user: IUser) => void;
 }) => {
 	return (
-		<Chip
-			icon={<FaceIcon />}
-			label={user.username}
-			onDelete={() => removeUser(user)}
-			color="primary"
-			variant="outlined"
-			sx={{
-				fontSize: '1rem',
-				padding: '4px',
-				backgroundColor: 'white',
-				'&:hover': {
-					backgroundColor: 'rgba(25, 118, 210, 0.04)'
-				}
-			}}
-		/>
+		<Stack
+			direction={"row"}
+			alignItems={"center"}
+			border={1}
+			borderRadius={2}
+			borderColor={"#0000007a"}
+			padding={1}
+		>
+			<Typography>{user.username}</Typography>
+			<IconButton onClick={() => removeUser(user)}>
+				<CloseIcon />
+			</IconButton>
+		</Stack>
 	);
 };
 

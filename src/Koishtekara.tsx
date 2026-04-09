@@ -1,9 +1,9 @@
-import { Button, Stack, Divider, Typography, Box } from "@mui/material";
+import { Button, IconButton, Stack, TextField } from "@mui/material";
 import React, { useState } from "react";
 import UserEntry from "./components/UserEntry";
+import { User } from "./models/User/User";
 import CarPicker from "./components/main/CarPicker";
 import UserAdder from "./components/main/UserAdder";
-import { IUser } from "./models/User/IUser";
 
 const Koishtekara = () => {
 	const [users, setUsers] = useState<IUser[]>([]);
@@ -16,53 +16,33 @@ const Koishtekara = () => {
 	};
 
 	return (
-		<Stack direction={{ xs: "column", md: "row" }} spacing={4} divider={<Divider orientation="vertical" flexItem />}>
+		<Stack direction={"row"}>
 			<Stack
 				direction={"column"}
 				sx={{
-					flex: 1,
-					display: "flex",
-					flexDirection: "column",
-					gap: 3,
+					flex: 0.5,
+					maxWidth: "50%",
+					alignItems: "flex-start",
+					justifyContent: "space-between",
 				}}
 			>
-				<Box>
-					<Typography variant="h6" gutterBottom color="primary">Добави хора</Typography>
-					<UserAdder addUser={addUser} />
-				</Box>
-
-				<Box flex={1}>
-					<Typography variant="subtitle1" color="textSecondary" gutterBottom>
-						Списък с пътници ({users.length})
-					</Typography>
-					<Stack direction={"row"} gap={1} flexWrap={"wrap"}>
-						{users.map((u) => {
-							return <UserEntry key={u.id} user={u} removeUser={removeUser} />;
-						})}
-						{users.length === 0 && (
-							<Typography variant="body2" color="textSecondary" sx={{ fontStyle: "italic", mt: 1 }}>
-								Няма добавени хора.
-							</Typography>
-						)}
-					</Stack>
-				</Box>
-
+				<UserAdder addUser={addUser} />
+				<Stack direction={"row"} gap={2} margin={1} flexWrap={"wrap"}>
+					{users.map((u) => {
+						return <UserEntry user={u} removeUser={removeUser} />;
+					})}
+				</Stack>
 				<Button
 					variant={"contained"}
 					color={"success"}
-					size="large"
 					onClick={() => console.log(users)}
-					sx={{ mt: "auto", alignSelf: "flex-start", py: 1.5, px: 4, borderRadius: 2 }}
+					sx={{ marginY: 5 }}
 				>
-					Реши кой ще кара!
+					Реши!
 				</Button>
 			</Stack>
-
-			<Stack flex={1} sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-				<Box>
-					<Typography variant="h6" gutterBottom color="primary">Избор на автомобил</Typography>
-					<CarPicker numberOfPeople={users.length} />
-				</Box>
+			<Stack flex={0.5} maxWidth={"50%"}>
+				<CarPicker numberOfPeople={users.length} />
 			</Stack>
 		</Stack>
 	);

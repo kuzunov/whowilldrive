@@ -1,5 +1,4 @@
 import UserUtilsInst from "../../utils/UserUtils";
-import { IUser } from "./IUser";
 
 export class User implements IUser {
 	id: number;

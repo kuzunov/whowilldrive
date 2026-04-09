@@ -1,6 +1,4 @@
-import { IUser } from "../User/IUser";
-
-export interface IPosition {
+interface IPosition {
 	id: number;
 	lincenceRequired?: boolean;
 	user?: IUser;
